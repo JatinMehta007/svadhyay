@@ -19,6 +19,43 @@ export const SelectEmotion = () => {
     }
   };
 
+  const [notes, setNotes] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState(""); // success / error
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          emotion: emotionType,
+          words: selectedWords,
+          notes,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Submission failed");
+
+      const data = await response.json();
+      console.log("Submitted:", data);
+      setStatus("success");
+
+      setTimeout(() => {
+        navigate("/end");
+      }, 1500);
+    } catch (error) {
+      console.error("Error submitting check-in:", error);
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+
   return (
     <div className="h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-pink-100 to-yellow-100">
       <img src="./landing_page.png" alt="" className="min-h-screen w-full" />
@@ -60,12 +97,23 @@ export const SelectEmotion = () => {
         )}
 
 
-        <motion.button
+       
+
+        {status === "success" && (
+          <p className="text-green-600 text-lg mt-4">Emotion check-in submitted successfully!</p>
+        )}
+        {status === "error" && (
+          <p className="text-red-600 text-lg mt-4">Something went wrong. Try again.</p>
+        )}
+    <motion.button
           whileTap={{ scale: 0.95 }}
-          className="bg-[#A44167] mt-[150px] ml-5 hover:bg-[#a44167ea] cursor-pointer text-white font-semibold py-3 px-6 rounded-full w-[455px] h-[55px] text-2xl transition"
-          onClick={() => navigate("/end",{ state : { selectedWords, emotionType }})}
+          disabled={isSubmitting}
+          className={`mt-[40px] ml-5 bg-[#A44167] hover:bg-[#a44167ea] cursor-pointer text-white font-semibold py-3 px-6 rounded-full w-[455px] h-[55px] text-2xl transition ${
+            isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+          onClick={handleSubmit}
         >
-          Complete
+          {isSubmitting ? "Submitting..." : "Submit Check-in"}
         </motion.button>
 
       </div>
