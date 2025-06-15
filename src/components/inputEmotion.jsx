@@ -8,7 +8,6 @@ export const InputEmotion = () => {
     const location = useLocation();
     const selectedWords = location.state?.selectedWords || [];
     const emotionType = location.state?.emotionType || "";
-    // const angerImg = location.state?.emotionType || "";
 
   return (
     <div className="h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-pink-100 to-yellow-100">
