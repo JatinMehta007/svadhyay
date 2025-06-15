@@ -1,12 +1,45 @@
-# React + Vite
+# 🧠 Emotion Check-in App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, interactive Emotion Check-in Web App that allows users to select their current emotion (like anger), choose mood keywords, add contextual notes, and submit a reflection. Built using **React.js**, **Tailwind CSS**, **Framer Motion**, and **React Router**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Preview
 
-## Expanding the ESLint configuration
+![Emotion Check-in Screenshot](./public/preview.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔥 Features
+
+- Emotion selection (e.g., Anger, Sadness, etc.)
+- Mood slider (e.g., Slightly Angry to Very Angry)
+- Mood keyword selection (e.g., Frustrated, Annoyed)
+- Contextual notes textarea
+- Smooth page transitions with Framer Motion
+- Responsive & mobile-friendly UI
+- Modular and scalable folder structure
+- Routing using React Router v6
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Routing**: React Router v6
+- **Assets**: PNGs stored in `/public`
+
+---
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/yourusername/emotion-checkin-app.git
+cd emotion-checkin-app
+npm install
+npm run dev
