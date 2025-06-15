@@ -34,9 +34,8 @@ export const InputEmotion = () => {
       console.log("Submitted:", data);
       setStatus("success");
 
-      // Optionally redirect or reset after delay
       setTimeout(() => {
-        navigate("/end"); // or navigate somewhere
+        navigate("/end");
       }, 1500);
     } catch (error) {
       console.error("Error submitting check-in:", error);
@@ -72,7 +71,6 @@ export const InputEmotion = () => {
           />
         </div>
 
-        {/* Emotion and words display */}
         <div className="w-1/5 text-2xl text-[#3E4352] mt-5 font-semibold">{emotionType}</div>
         {selectedWords.length > 0 && (
           <div className="mt-2 text-xl block font-medium text-start ml-16 text-gray-700">
@@ -86,7 +84,6 @@ export const InputEmotion = () => {
           <img src={angerImg} alt="Emotion" className="w-[120px] h-[120px] mx-auto mt-4" />
         )}
 
-        {/* Feedback messages */}
         {status === "success" && (
           <p className="text-green-600 text-lg mt-4">Emotion check-in submitted successfully!</p>
         )}
