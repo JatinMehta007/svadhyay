@@ -6,7 +6,7 @@ A beautiful, interactive Emotion Check-in Web App that allows users to select th
 
 ## 📸 Preview
 
-![Emotion Check-in Screenshot](./public/preview.png)
+![Emotion Check-in Screenshot](./public/image.png)
 
 ---
 
@@ -17,7 +17,6 @@ A beautiful, interactive Emotion Check-in Web App that allows users to select th
 - Mood keyword selection (e.g., Frustrated, Annoyed)
 - Contextual notes textarea
 - Smooth page transitions with Framer Motion
-- Responsive & mobile-friendly UI
 - Modular and scalable folder structure
 - Routing using React Router v6
 
